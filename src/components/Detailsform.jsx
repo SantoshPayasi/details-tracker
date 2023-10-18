@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import DetailsProvider from '../context/dataContext'
 import "../style/DetailsForm.css"
 const Detailsform = () => {
-  const {setStartDate, setEndDate, lead, setLead, ddr, setDdr, updateDetailsArray, startDate, endDate, selectedDate, setDateArray}= useContext(DetailsProvider)
+  const {setStartDate, setEndDate, lead, setLead, ddr, setDdr, updateDetailsArray, startDate, endDate, selectedDate, setDateArray, selectedDates}= useContext(DetailsProvider)
   return (
     <>
     <form onSubmit={e=>updateDetailsArray(e)} className='form'>
@@ -23,6 +23,7 @@ const Detailsform = () => {
       <div>
         <label htmlFor='excludedDates'>ExcludedDates</label>
         <input type="date" id="excludedDates" multiple={true} min={startDate} max={endDate} value={selectedDate} onChange={setDateArray} disabled={startDate==false || endDate==false} required/>
+        <span>SelectedDates: {selectedDates.length}</span>
       </div>
       <div>
         <label htmlFor='leadCount'>LeadCount</label>

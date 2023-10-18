@@ -7,13 +7,10 @@ const DetailsContext = createContext({});
 export const DataProvider = ({ children }) => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  // const [duration, setDuration] = useState("");
   let [selectedDates, setSelectedDates] = useState([]);
   const [selectedDate, setSelectedDate] = useState("")
-  // const [noofselelectedDays, setNoofselelectedDays] = useState(0);
   const [lead, setLead] = useState(0);
   const [ddr, setDdr] = useState(0);
-  // const [lastUpdate, setLastupdate] = useState("");
   const {tableData, updateTable} = useContext(tableDataContext)
 
 
@@ -78,10 +75,9 @@ export const DataProvider = ({ children }) => {
         endDate,
         setDateArray,
         setEndDate,
-        // setDuration,
         setSelectedDates,
         selectedDate,
-        // setNoofselelectedDays,
+        selectedDates,
         setLead,
         lead,
         setDdr,
