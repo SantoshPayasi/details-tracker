@@ -82,7 +82,6 @@ export const DataProvider = ({ children }) => {
         lead,
         setDdr,
         ddr,
-        // setLastupdate,
 
         updateDetailsArray
       }}
