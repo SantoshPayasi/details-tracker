@@ -1,0 +1,58 @@
+.main-div{
+    /* background-color: red; */
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin: auto;
+}
+
+.main-div section{
+    /* background-color: green; */
+    width: 100%;
+    margin-bottom: 1rem;
+    
+    padding-top: 0.5rem ;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.selectedDates{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.PreviewHeading{
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    height: 2rem;
+    padding: 5px 10px 0 ;
+}
+.Value{
+    display: block;
+    width: 100%;
+    padding: 5px 10px 0 10px;
+}
+
+@media (max-width:445px) {
+    .main-div section{
+        width: 100%;
+        padding-left:1rem;
+        padding-right: 1rem;
+        text-align: center;
+        justify-content: flex-start;
+        column-gap: 2rem;
+    }
+    .PreviewHeading, .Value{
+        display: block;
+        width: 50%;
+    }
+}

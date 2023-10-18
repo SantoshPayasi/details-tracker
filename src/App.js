@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./style/App.css";
+import Detailsform from "./components/Detailsform";
+import { DataProvider } from "./context/dataContext";
+import { TableDataProvider } from "./context/tableDataContext";
+import DetailsTable from "./Tables/detailsTable";
+import PreviewBox from "./components/PreviewBox";
+import { useState } from "react";
 function App() {
+  const [data, setData] = useState(null)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <TableDataProvider>
+        <DataProvider>
+          <h1>Enter Details</h1>
+          <Detailsform />
+          <hr></hr>
+          <h1>Details Table</h1>
+          <DetailsTable previewData={setData} />
+          <hr></hr>
+          { data!=null?<h1>Preview Details</h1>:null}
+         { data!=null?<PreviewBox data={data}/>:null}
+        </DataProvider>
+      </TableDataProvider>
+ 
+        
+     
+  
   );
 }
 
